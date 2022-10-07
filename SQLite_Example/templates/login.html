@@ -1,0 +1,50 @@
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0"></h5>
+
+        <div class="row mt-3">
+            <div class="col md-6">
+                <h1>Login Page</h1>
+                <br>
+                <body>
+                To login, enter you username and password in the boxes below. You get three attempts to log in, so make
+                sure you know your log-in information!
+                </body>
+                <form action="{{ url_for('.login') }}" method="POST"
+                      id="login_form">
+                    <div class="form-group">
+                        <label for="username">Username: </label><input
+                            class="form-control" type="text" id="username"
+                            name="username" required><br/>
+                        <label for="password">Password: </label><input
+                            class="form-control" type='password' id="password"
+                            name="password" required minlength="8" maxlength="25"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter,
+                            and at least 8 or more characters">
+
+                        <button type="submit" class="btn btn-primary mt-4">
+                            Submit
+                        </button>
+
+                        <br>
+                        <br>
+                        <div id = "ReturnToHome">
+                            <a href = "/">Home Page</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+</div>
+
+{% endblock %}
